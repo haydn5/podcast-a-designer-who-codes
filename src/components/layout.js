@@ -11,6 +11,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import 'bootstrap/dist/css/bootstrap.min.css'
+
+import 'react-h5-audio-player/lib/styles.css';
 import "../css/custom.css"
 
 const Layout = ({ children }) => {

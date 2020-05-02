@@ -5,12 +5,36 @@ module.exports = {
     author: `Haydn Adams`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-161489374-1",
+        head: true,
+        anonymize: true,
+      },
+    },
+    {
+      resolve: 'gatsby-source-buzzsprout',
+      options: {
+        // You will need to generate an access token and get the podcast ID from your account
+        // https://github.com/Buzzsprout/buzzsprout-api#authentication
+        token: '7dce05a13b9f4433f59a50cbefbe2236',
+        podcastId: '1051525',
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `template`,
+        path: `${__dirname}/src/templates`,
       },
     },
     `gatsby-transformer-sharp`,

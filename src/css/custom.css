@@ -1,0 +1,11 @@
+svg {
+    vertical-align: initial;
+  }
+  
+  .rhap_additional-controls {
+    display: none;
+  }
+  
+  .rhap_volume-controls {
+    justify-content: initial;
+  }
