@@ -10,8 +10,8 @@ exports.createPages = async function ({ actions, graphql }) {
         }
       }
     `)
-    data.allBuzzsproutPodcastEpisode.edges.forEach(edge => {
-      const slug = edge.node.slug
+    data.allBuzzsproutPodcastEpisode.edges.forEach(edges => {
+      const slug = edges.node.slug
       actions.createPage({
         path: slug,
         component: require.resolve(`./src/templates/podcast-episode.js`),

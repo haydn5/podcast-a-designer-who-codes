@@ -1,3 +1,7 @@
+.singleCol {
+  max-width: 750px;
+}
+
 svg {
     vertical-align: initial;
   }

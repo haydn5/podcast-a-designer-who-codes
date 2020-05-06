@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Starter Template with React Bootstrap`,
-    description: ``,
-    author: `Haydn Adams`,
+    title: `A Designer Who Codes Podcast`,
+    description: `Become a better Web Designer by listening to A Designer Who Codes Podcast`,
+    author: `Haydn S. Adams, BFA`,
+    siteUrl: `https://podcast.adesignerwhocodes.com`,
   },
   plugins: [
     {
@@ -38,6 +39,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
