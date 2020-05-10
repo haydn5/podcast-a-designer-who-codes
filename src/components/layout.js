@@ -9,13 +9,18 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import { Container, Row, Col, Image } from "react-bootstrap";
+import podcastArtwork from "../images/a-designer-who-codes-podcast.jpg"
+// import Header from "./header"
 import 'bootstrap/dist/css/bootstrap.min.css'
-
 import 'react-h5-audio-player/lib/styles.css';
 import "../css/custom.css"
+// import CloseScreen from "../pages/test"
+
 
 const Layout = ({ children }) => {
+
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -28,14 +33,28 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+    <div className="featured-audio">
+      Featured Audio
+    </div>
+    <Container>
+      <Row>
+        <Col lg={4}>
+          <p><Image src={podcastArtwork} alt={data.site.siteMetadata.title} fluid rounded /></p>
+        </Col>
+        <Col lg={8}>
+          <main className="scroll-me">{children}</main>
+        </Col>
+      </Row>
+    </Container>
+      
       <div>
-        <main>{children}</main>
+        
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
+        {/* <CloseScreen /> */}
       </div>
     </>
   )

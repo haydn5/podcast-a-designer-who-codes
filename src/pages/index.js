@@ -7,27 +7,27 @@ import SEO from "../components/seo"
 import { Container } from "react-bootstrap";
 
 
+
+
 const IndexPage = ({data}) => (
   <Layout>
     <SEO title="A Designer Who Codes Podcast" />
-    <Container>
-      <h1>Hi people</h1>
-    
-    
-    {data.allBuzzsproutPodcastEpisode.edges.map(({ node }) => (
-    <span key={node.id}>
-        <h2>
-          <Link to={node.slug}>
-          <small>Episode #{node.episode_number}</small><br />
-        {node.title}
-        </Link>
-        <p>Released on {node.published_at}</p>
-        </h2>
-        <p><small>Episode Summary</small></p>
-        <p>{node.summary}</p>
+    <Container>  
+      <ol className="episodes">
 
-    </span>
+      
+    {data.allBuzzsproutPodcastEpisode.edges.map(({ node }) => (
+      <li key={node.id}>
+        <Link to={node.slug} className="card-link">
+         <div>
+         <span>{node.published_at}</span>
+          <h2 className="track-title">{node.title}</h2>
+          <p>{node.summary}</p>
+         </div>
+        </Link>
+        </li>
     ))}
+    </ol>
     </Container>
   </Layout>
 )

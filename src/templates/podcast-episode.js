@@ -13,11 +13,11 @@ export default function PodcastEpisode({ data }) {
       <Container className="singleCol">
         <h1>{podcast.title}</h1>
         <p>
-        <AudioPlayer
-                src={podcast.audio_url}
-                layout="horizontal-reverse"
-                customAdditionalControls={[]}
-                />
+          <AudioPlayer
+                  src={podcast.audio_url}
+                  layout="horizontal-reverse"
+                  customAdditionalControls={[]}
+          />
         </p>
         <div>
           <div dangerouslySetInnerHTML={{ __html: podcast.description }} />
